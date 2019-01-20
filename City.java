@@ -1,9 +1,14 @@
 
 public class City {
+	/*
+	 * The instance variables/methods were public, we changed their access modifier 
+	 * to private so they can be accessed only from inside the same class
+	 * & then to protected so they can be used by a subclass
+	 */
 	
-	private String cityName;
-	private String countryName;
-	private int numberInhabitants;
+	protected String cityName;
+	protected String countryName;
+	protected int numberInhabitants;
 	char category;
 	
 	// This class variables used to count the number of cities (= instances) we've created
