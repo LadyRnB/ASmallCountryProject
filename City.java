@@ -12,7 +12,7 @@ public class City {
 	char category;
 	
 	// This class variables used to count the number of cities (= instances) we've created
-	private static int numberInstancesPrivate = 0;
+	protected static int numberInstancesPrivate = 0;
 	public static int numberInstancesPublic = 0;
 
 	public City() {// Default constructor
@@ -91,10 +91,13 @@ public class City {
 		}
 	}
 
-	/** To describe the city, a method returns its description */
+	/**
+	 * 
+	 * @return String the description of a city
+	 */
 	public String cityDescription() {
-		String strDescribe;
-		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
+		String strDescribe = new String();
+		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -112,4 +115,5 @@ public class City {
 	public static int getNbrInstances() {
 		return numberInstancesPrivate;
 	}
+
 }
