@@ -98,13 +98,18 @@ public class SmallCountry {
 				City cityA = new City(cNames[i], cCountries[i], cNbInhab[i]);
 				cArray[i] = cityA;
 				System.out.println(cityA.cityDescription());
-			} else {
+
+				} else {
 				j++;
 				City capCityA = new CapitalCity(cNames[i], cCountries[j], cNbInhab[i], cCapMonum[j]);
 				cArray[i] = capCityA;
 				System.out.println(capCityA.cityDescription());
-
 			}
+		}
+		
+		System.out.println("\n\nAnother way to display the array's objects using \"toString()\" instead of \"cityDescription method\":");
+		for (Object obj : cArray) {
+			System.out.println(obj.toString());
 		}
 	}
 }

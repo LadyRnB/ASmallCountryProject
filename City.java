@@ -115,5 +115,15 @@ public class City {
 	public static int getNbrInstances() {
 		return numberInstancesPrivate;
 	}
+	/*
+	 *@see cityDescription which is equivalent to toString
+	 */
+	public String toString() {
+		String strScreen = new String();
+		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName + " & the number of its inhabitants is " + this.numberInhabitants + 
+				", then it's categorized " + this.category + ".";
+		return strScreen;
+		
+	}
 
 }
