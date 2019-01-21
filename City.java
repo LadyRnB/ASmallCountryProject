@@ -3,7 +3,7 @@ public class City {
 	/*
 	 * The instance variables/methods were public, we changed their access modifier 
 	 * to private so they can be accessed only from inside the same class
-	 * & then to protected so they can be used by a subclass
+	 * & then to protected just so they can be used by a subclass
 	 */
 	
 	protected String cityName;

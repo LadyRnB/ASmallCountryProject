@@ -4,6 +4,7 @@ public class CapitalCity extends City {
 
 	public CapitalCity() {
 		super();
+		this.monument = "Unknown";
 	}
 
 	public CapitalCity(String cityCap, String Countrycap, int nbrInhabCap, String monumentCap) {
