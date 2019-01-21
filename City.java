@@ -72,8 +72,8 @@ public class City {
 	}
 
 	/**
-	 * The category depends on the number of inhabitants This method just updates
-	 * the class variable 'category'
+	 * The category depends on the number of inhabitants
+	 * This method just updates the class variable 'category'
 	 */
 	
 	
@@ -97,7 +97,7 @@ public class City {
 	 */
 	public String cityDescription() {
 		String strDescribe = new String();
-		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
+		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -120,7 +120,7 @@ public class City {
 	 */
 	public String toString() {
 		String strScreen = new String();
-		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName + " & the number of its inhabitants is " + this.numberInhabitants + 
+		strScreen = "\t Â° " + this.cityName + " is located in " + this.countryName + " & the number of its inhabitants is " + this.numberInhabitants + 
 				", then it's categorized " + this.category + ".";
 		return strScreen;
 		
