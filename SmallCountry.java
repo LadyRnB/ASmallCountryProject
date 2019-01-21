@@ -10,13 +10,12 @@ public class SmallCountry {
 		 * : You don't access to the static variable (or the method) - numberInstances -
 		 * this way: city1.getNbrInstances() but rather referring to the class - City -
 		 */
-		
+
 		// to access a public class variable
 		System.out.println("The number of cities we've created is: " + City.numberInstancesPublic + " (public counter)");
-		
-		// to access a private class variable
-		System.out.println("The number of cities we've created is: " + City.getNbrInstances() + " (public counter)"); 
 
+		// to access a private class variable
+		System.out.println("The number of cities we've created is: " + City.getNbrInstances() + " (public counter)");
 		System.out.println("The first City is: " + city1.getNameCity() + ", & it's located in " + city1.getNameCountry());
 		System.out.println("The number of its inhabitants is: " + city1.getNbInhabitants());
 
@@ -79,8 +78,30 @@ public class SmallCountry {
 		System.out.println();
 		System.out.println(city2.compareCities(city1));
 		System.out.println(city2.compareCities(city3));
-		
+
 		CapitalCity cap = new CapitalCity("London", "United Kingdom", 8136000, "The Big Ben");
 		System.out.println(cap.cityDescription());
+
+		City[] cArray = new City[6];
+		String[] cNames = { "München", "Yokohama", "Casablanca", "Berlin", "Tokyo", "Rabat" };
+		int[] cNbInhab = { 1450000, 3725000, 3360000, 3575000, 9273000, 577827 };
+		String[] cCountries = { "Germany", "Japan", "Morocco" };
+		String[] cCapMonum = { "Bradenburger Tor", "Tokyo Skytree", "Hassan Tower" };
+		System.out.println("\n\nThis is my cities' Array \"cArray\": ");
+		System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+		int j = -1;
+		for (int i = 0; i < cArray.length; i++) {
+			if (i < 3) {
+				City cityA = new City(cNames[i], cCountries[i], cNbInhab[i]);
+				cArray[i] = cityA;
+				System.out.println(cityA.cityDescription());
+			} else {
+				j++;
+				City capCityA = new CapitalCity(cNames[i], cCountries[j], cNbInhab[i], cCapMonum[j]);
+				cArray[i] = capCityA;
+				System.out.println(capCityA.cityDescription());
+
+			}
+		}
 	}
 }
