@@ -82,6 +82,9 @@ public class SmallCountry {
 		CapitalCity cap = new CapitalCity("London", "United Kingdom", 8136000, "The Big Ben");
 		System.out.println(cap.cityDescription());
 
+		/**
+		 * The creation of an array of objects with different types
+		 */
 		City[] cArray = new City[6];
 		String[] cNames = { "München", "Yokohama", "Casablanca", "Berlin", "Tokyo", "Rabat" };
 		int[] cNbInhab = { 1450000, 3725000, 3360000, 3575000, 9273000, 577827 };
