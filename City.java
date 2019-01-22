@@ -99,7 +99,7 @@ public class City {
 	 */
 	public String cityDescription() {
 		String strDescribe = new String();
-		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
+		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -123,7 +123,7 @@ public class City {
 	 */
 	public String toString() {
 		String strScreen = new String();
-		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName
+		strScreen = "\t Â° " + this.cityName + " is located in " + this.countryName
 				+ " & the number of its inhabitants is " + this.numberInhabitants + ", then it's categorized "
 				+ this.category + ".";
 		return strScreen;
