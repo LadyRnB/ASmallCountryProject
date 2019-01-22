@@ -1,17 +1,19 @@
+import java.util.Objects;
 
 public class City {
 	/*
-	 * The instance variables/methods were public, we changed their access modifier 
-	 * to private so they can be accessed only from inside the same class
-	 * & then to protected just so they can be used by a subclass
+	 * The instance variables/methods were public, we changed their access modifier
+	 * to private so they can be accessed only from inside the same class & then to
+	 * protected just so they can be used by a subclass
 	 */
-	
+
 	protected String cityName;
 	protected String countryName;
 	protected int numberInhabitants;
 	char category;
-	
-	// This class variables used to count the number of cities (= instances) we've created
+
+	// This class variables used to count the number of cities (= instances) we've
+	// created
 	protected static int numberInstancesPrivate = 0;
 	public static int numberInstancesPublic = 0;
 
@@ -22,10 +24,10 @@ public class City {
 		countryName = "The name of the country is: Unknown!";
 		numberInhabitants = 0;
 		this.setcategory();
-		
+
 		numberInstancesPrivate++;
 		numberInstancesPublic++;
-		
+
 	}
 
 	public City(String cityN, String countryN, int nbrInhabitants) { // Constructor with parameters
@@ -36,10 +38,10 @@ public class City {
 		countryName = countryN;
 		numberInhabitants = nbrInhabitants;
 		this.setcategory();
-		
+
 		numberInstancesPrivate++;
 		numberInstancesPublic++;
-		
+
 	}
 
 	public String getNameCity() {
@@ -72,16 +74,16 @@ public class City {
 	}
 
 	/**
-	 * The category depends on the number of inhabitants
-	 * This method just updates the class variable 'category'
+	 * The category depends on the number of inhabitants This method just updates
+	 * the class variable 'category'
 	 */
-	
-	
-	private void setcategory() { 
-		/* We change the access modifier (visibility) of this 
-		method from public to private  so we can "just call it", no modification from outside the class
-		*/
-								
+
+	private void setcategory() {
+		/*
+		 * We change the access modifier (visibility) of this method from public to
+		 * private so we can "just call it", no modification from outside the class
+		 */
+
 		int[] upperLimit = { 0, 1000, 10000, 100000, 500000, 1000000, 5000000, 10000000 };
 		char[] categories = { '/', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H' };
 		int i = 0;
@@ -97,7 +99,7 @@ public class City {
 	 */
 	public String cityDescription() {
 		String strDescribe = new String();
-		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
+		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -115,15 +117,20 @@ public class City {
 	public static int getNbrInstances() {
 		return numberInstancesPrivate;
 	}
+
 	/*
-	 *@see cityDescription which is equivalent to toString
+	 * @see cityDescription which is equivalent to toString
 	 */
 	public String toString() {
 		String strScreen = new String();
-		strScreen = "\t Â° " + this.cityName + " is located in " + this.countryName + " & the number of its inhabitants is " + this.numberInhabitants + 
-				", then it's categorized " + this.category + ".";
+		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName
+				+ " & the number of its inhabitants is " + this.numberInhabitants + ", then it's categorized "
+				+ this.category + ".";
 		return strScreen;
-		
+
 	}
 
+	public int hashCode() {
+	return Objects.hash(cityName, countryName, numberInhabitants, category);
+	}
 }

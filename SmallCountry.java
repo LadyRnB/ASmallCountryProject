@@ -1,4 +1,3 @@
-
 public class SmallCountry {
 	public static void main(String[] args) {
 
@@ -111,5 +110,6 @@ public class SmallCountry {
 		for (Object obj : cArray) {
 			System.out.println(obj.toString());
 		}
+		System.out.println(city1.hashCode());
 	}
 }
