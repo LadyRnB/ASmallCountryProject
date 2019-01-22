@@ -133,4 +133,18 @@ public class City {
 	public int hashCode() {
 	return Objects.hash(cityName, countryName, numberInhabitants, category);
 	}
+	public boolean equals(Object obj) {
+		//Checking whether objects references are identical
+		if (this == obj)
+		return true;
+		//Making sure that the objects are of the same type: City
+		if (getClass() != obj.getClass())
+		return false;
+		//To compare objects attributes
+		City other = (City) obj;
+		return Objects.equals(other.getcategory(), this.getcategory())
+				&& Objects.equals(other.getNameCity(),this.getNameCity())
+				&& Objects.equals(other.getNbInhabitants(),this.getNbInhabitants())
+				&& Objects.equals(other.getNameCountry(), this.getNameCountry());
+		}
 }
