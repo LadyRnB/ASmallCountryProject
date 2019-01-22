@@ -143,8 +143,8 @@ public class City {
 		//To compare objects attributes
 		City other = (City) obj;
 		return Objects.equals(other.getcategory(), this.getcategory())
-				&& Objects.equals(other.getNameCity(),this.getNameCity())
-				&& Objects.equals(other.getNbInhabitants(),this.getNbInhabitants())
-				&& Objects.equals(other.getNameCountry(), this.getNameCountry());
+			&& Objects.equals(other.getNameCity(),this.getNameCity())
+			&& Objects.equals(other.getNbInhabitants(),this.getNbInhabitants())
+			&& Objects.equals(other.getNameCountry(), this.getNameCountry());
 		}
 }
