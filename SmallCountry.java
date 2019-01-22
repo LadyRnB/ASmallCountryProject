@@ -6,7 +6,7 @@ public class SmallCountry {
 		} catch (NumberInhabitantsException | CityNameException e2) {
 			e2.printStackTrace();
 			//This method "printStackTrace" helps to understand where the actual problem
-			//occurred. it's equivalent to: - System.out.println(e1); -
+			//occurred. it's equivalent to: - System.out.println(e2); -
 			System.out.println(e2.getMessage());
 		}
 
