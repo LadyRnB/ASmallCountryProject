@@ -99,7 +99,7 @@ public class City {
 	 */
 	public String cityDescription() {
 		String strDescribe = new String();
-		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
+		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -123,7 +123,7 @@ public class City {
 	 */
 	public String toString() {
 		String strScreen = new String();
-		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName
+		strScreen = "\t Â° " + this.cityName + " is located in " + this.countryName
 				+ " & the number of its inhabitants is " + this.numberInhabitants + ", then it's categorized "
 				+ this.category + ".";
 		return strScreen;
@@ -133,4 +133,56 @@ public class City {
 	public int hashCode() {
 	return Objects.hash(cityName, countryName, numberInhabitants, category);
 	}
+	public int hashCode() {
+		//
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + category;
+		result = prime * result + numberInhabitants;
+		//Calculting hashcodes with objects, so the objects musn't be null
+		//Otherwise it will return an error
+		result = prime * result + ((countryName== null) ? 0 :
+			countryName.hashCode());
+		result = prime * result + ((cityName == null) ? 0 :
+			cityName.hashCode());
+		return result;
+		}
+		public boolean equals(Object obj) {
+		//Checking whether the objects's references are identical
+		if (this == obj)
+		return true;
+		//Checking whether the object passed as parameter is null
+		if (obj == null)
+		return false;
+		//Making sure that the objects have the same type, here their type is: City
+		// The method getClass returns an object: Class that represents the class of
+		//object passed as a parameter
+		if (getClass() != obj.getClass())
+		return false;
+		
+		//To compare objects attributes
+		City other = (City) obj;
+		
+		if (category != other.category)
+		return false;
+		
+		if (numberInhabitants != other.numberInhabitants)
+		return false;
+		
+		if (countryName == null) {
+		if (other.countryName != null)
+		return false;
+		}
+		else if (!countryName.equals(other.countryName))
+		return false;
+		
+		if (cityName == null) {
+		if (other.cityName != null)
+		return false;
+		}
+		else if (!cityName.equals(other.cityName))
+		return false;
+		
+		return true;
+		}
 }
