@@ -10,7 +10,7 @@ public class City {
 	protected String cityName;
 	protected String countryName;
 	protected int numberInhabitants;
-	char category;
+	char category = '/';
 
 	// This class variables used to count the number of cities (= instances) we've
 	// created
@@ -18,10 +18,10 @@ public class City {
 	public static int numberInstancesPublic = 0;
 
 	public City() {// Default constructor
-		System.out.println("The creation of a city!");
+		System.out.println("\nThe creation of a city!");
 		System.out.println("**********************");
-		cityName = "The name of this city is: Unknown!";
-		countryName = "The name of the country is: Unknown!";
+		cityName = "Unknown";
+		countryName = "Unknown";
 		numberInhabitants = 0;
 		this.setcategory();
 
@@ -31,11 +31,14 @@ public class City {
 	}
 
 	// Constructor with parameters
-	public City(String cityN, String countryN, int nbrInhabitants) throws NumberInhabitantsException 
+	public City(String cityN, String countryN, int nbrInhabitants) throws NumberInhabitantsException, CityNameException
 		 {
 		if (nbrInhabitants < 0 ) {
-			throw new NumberInhabitantsException();
+			throw new NumberInhabitantsException (nbrInhabitants);
 			}
+		if (cityN.length() < 3) {
+			throw new CityNameException (cityN);
+		}
 		else {
 			System.out.println("\nThe creation of a new city (Instance)");
 			System.out.println("-------------------------------------");
