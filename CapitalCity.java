@@ -7,7 +7,8 @@ public class CapitalCity extends City {
 		this.monument = "Unknown";
 	}
 
-	public CapitalCity(String cityCap, String Countrycap, int nbrInhabCap, String monumentCap) {
+	public CapitalCity(String cityCap, String Countrycap, int nbrInhabCap, String monumentCap) throws NumberInhabitantsException 
+	{
 		super(cityCap, Countrycap, nbrInhabCap);
 		this.monument = monumentCap;
 	}

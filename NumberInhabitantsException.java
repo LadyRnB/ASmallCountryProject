@@ -1,6 +1,6 @@
 
 /* To ignore the warning 
-"The serializable class ClASSNAME does not declare a static final serialVersionUID......
+"The serializable class CLASSNAME does not declare a static final serialVersionUID......
 */
 @SuppressWarnings("serial") 
 public class NumberInhabitantsException extends Exception {

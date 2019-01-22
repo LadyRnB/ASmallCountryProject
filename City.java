@@ -30,19 +30,24 @@ public class City {
 
 	}
 
-	public City(String cityN, String countryN, int nbrInhabitants) { // Constructor with parameters
-		System.out.println("\nThe creation of a new city (Instance)");
-		System.out.println("-------------------------------------");
-
-		cityName = cityN;
-		countryName = countryN;
-		numberInhabitants = nbrInhabitants;
-		this.setcategory();
-
-		numberInstancesPrivate++;
-		numberInstancesPublic++;
-
-	}
+	// Constructor with parameters
+	public City(String cityN, String countryN, int nbrInhabitants) throws NumberInhabitantsException 
+		 {
+		if (nbrInhabitants < 0 ) {
+			throw new NumberInhabitantsException();
+			}
+		else {
+			System.out.println("\nThe creation of a new city (Instance)");
+			System.out.println("-------------------------------------");
+			cityName = cityN;
+			countryName = countryN;
+			numberInhabitants = nbrInhabitants;
+			this.setcategory();
+			numberInstancesPrivate++;
+			numberInstancesPublic++;
+			}
+		}
+		
 
 	public String getNameCity() {
 		return cityName;
@@ -99,7 +104,7 @@ public class City {
 	 */
 	public String cityDescription() {
 		String strDescribe = new String();
-		strDescribe = "\t Â° " + this.cityName + " is located in " + this.countryName + ", & the "
+		strDescribe = "\t ° " + this.cityName + " is located in " + this.countryName + ", & the "
 				+ "number of its inhabitants is " + this.numberInhabitants + ", then it's categorized " + this.category
 				+ ".";
 		return strDescribe;
@@ -123,7 +128,7 @@ public class City {
 	 */
 	public String toString() {
 		String strScreen = new String();
-		strScreen = "\t Â° " + this.cityName + " is located in " + this.countryName
+		strScreen = "\t ° " + this.cityName + " is located in " + this.countryName
 				+ " & the number of its inhabitants is " + this.numberInhabitants + ", then it's categorized "
 				+ this.category + ".";
 		return strScreen;
@@ -131,20 +136,21 @@ public class City {
 	}
 
 	public int hashCode() {
-	return Objects.hash(cityName, countryName, numberInhabitants, category);
+		return Objects.hash(cityName, countryName, numberInhabitants, category);
 	}
+
 	public boolean equals(Object obj) {
-		//Checking whether objects references are identical
+		// Checking whether objects references are identical
 		if (this == obj)
-		return true;
-		//Making sure that the objects are of the same type: City
+			return true;
+		// Making sure that the objects are of the same type: City
 		if (getClass() != obj.getClass())
-		return false;
-		//To compare objects attributes
+			return false;
+		// To compare objects attributes
 		City other = (City) obj;
 		return Objects.equals(other.getcategory(), this.getcategory())
-			&& Objects.equals(other.getNameCity(),this.getNameCity())
-			&& Objects.equals(other.getNbInhabitants(),this.getNbInhabitants())
-			&& Objects.equals(other.getNameCountry(), this.getNameCountry());
-		}
+				&& Objects.equals(other.getNameCity(), this.getNameCity())
+				&& Objects.equals(other.getNbInhabitants(), this.getNbInhabitants())
+				&& Objects.equals(other.getNameCountry(), this.getNameCountry());
+	}
 }
